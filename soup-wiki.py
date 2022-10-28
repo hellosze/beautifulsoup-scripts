@@ -2,11 +2,11 @@ from bs4 import BeautifulSoup
 from lxml import etree
 import urllib.request
 
-base = 'hhttps://en.m.wikipedia.org/wiki/Linus_Torvalds'
+base = 'https://en.m.wikipedia.org/wiki/Linus_Torvalds'
 with urllib.request.urlopen(base) as response:
     html = response.read()
     soup = BeautifulSoup(html, 'html.parser')
-    print(soup)
+    print(soup.prettify())
     #print(soup.title.contents)
     #print(soup.body.b)
     #print(soup.find_all('a'))
